@@ -43,5 +43,14 @@
 	<false/>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6145202734095451~5710014142</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Explain why your app uses music</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Explain why your app uses photo library</string>
 </dict>
 </plist>
