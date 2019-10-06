@@ -4,9 +4,11 @@ import 'package:soundboard/src/models/data/audio/audio_data_model.dart';
 import 'package:soundboard/src/models/view/base_audio_view_model.dart';
 import 'package:soundboard/src/services/audio/audio_player_service.dart';
 
-class AudioPayerViewModel extends BaseAudioViewModel {
+class AudioPlayerViewModel extends BaseAudioViewModel {
   AudioDataModel _audioDataModel;
   AudioPlayerService _player = locator<AudioPlayerService>();
+
+  double playerVolume = 0.5;
 
   void init(AudioDataModel audioDataModel) {
     _audioDataModel = audioDataModel;
@@ -14,6 +16,7 @@ class AudioPayerViewModel extends BaseAudioViewModel {
     _player.playerState.stream.listen((onData) {
       print('PlayerState: $onData');
     });
+    _player.setVolume(playerVolume);
   }
 
   void play() async {
@@ -31,9 +34,20 @@ class AudioPayerViewModel extends BaseAudioViewModel {
     setState(AudioState.Stopped);
   }
 
+  void resume() async {
+    await _player?.resume();
+    setState(AudioState.Playing);
+  }
+
   void loop() async {
     await _player?.loop();
     setState(AudioState.Looping);
+  }
+
+  void setVolume(double volume) async {
+    playerVolume = volume;
+    await _player?.setVolume(volume);
+    setState(state);
   }
 
   @override

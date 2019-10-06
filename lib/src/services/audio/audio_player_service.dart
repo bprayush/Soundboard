@@ -43,6 +43,6 @@ class AudioPlayerService {
   }
 
   Future<int> setVolume(double volume) async {
-    return _audioPlayer?.setVolume(volume);
+    return await _audioPlayer?.setVolume(volume);
   }
 }
