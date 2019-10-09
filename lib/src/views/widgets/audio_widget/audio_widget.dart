@@ -69,14 +69,7 @@ class _AudioWidgetState extends State<AudioWidget> {
                         children: <Widget>[
                           GestureDetector(
                             onTap: () {
-                              if (model.state == AudioState.Stopped)
-                                model.play();
-                              else if (model.state == AudioState.Playing)
-                                model.pause();
-                              else if (model.state == AudioState.Paused)
-                                model.resume();
-                              else if (model.state == AudioState.Looping)
-                                model.stop();
+                              model.handleTap();
                             },
                             onLongPress: () {
                               model.loop();

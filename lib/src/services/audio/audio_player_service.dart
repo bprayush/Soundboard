@@ -3,16 +3,14 @@ import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 
 class AudioPlayerService {
-  final AudioPlayer _audioPlayer = AudioPlayer();
+  final AudioPlayer _audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
   String _filePath;
 
-  StreamController<AudioPlayerState> playerState =
-      StreamController<AudioPlayerState>.broadcast();
+  Stream<AudioPlayerState> get playerState => _audioPlayer.onPlayerStateChanged;
 
   void dispose() {
     _audioPlayer?.stop();
     _audioPlayer?.dispose();
-    playerState?.close();
   }
 
   void init(String filePath) {

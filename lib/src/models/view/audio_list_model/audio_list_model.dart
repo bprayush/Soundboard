@@ -27,8 +27,8 @@ class AudioListViewModel extends BaseViewModel {
       path.lastIndexOf('/') + 1,
       path.lastIndexOf('.'),
     );
-    print('Title: $title');
-    print('Path: $path');
+    // print('Title: $title');
+    // print('Path: $path');
 
     _audioList.add(AudioDataModel(
       file: path,
