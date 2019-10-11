@@ -15,6 +15,7 @@ class AudioPlayerService {
 
   void init(String filePath) {
     _filePath = filePath;
+    _audioPlayer?.seek(Duration(milliseconds: 100));
   }
 
   Future<int> play() async {
