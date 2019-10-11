@@ -15,7 +15,7 @@ class AudioPlayerService {
 
   void init(String filePath) {
     _filePath = filePath;
-    _audioPlayer?.seek(Duration(milliseconds: 100));
+    _audioPlayer?.seek(Duration(milliseconds: 10));
   }
 
   Future<int> play() async {
@@ -32,7 +32,8 @@ class AudioPlayerService {
 
   Future<int> stop() async {
     await _audioPlayer?.setReleaseMode(ReleaseMode.RELEASE);
-    return await _audioPlayer?.stop();
+    await _audioPlayer?.stop();
+    return await _audioPlayer?.seek(Duration(milliseconds: 10));
   }
 
   Future<int> loop() async {
