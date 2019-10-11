@@ -4,7 +4,7 @@ import 'package:soundboard/locator.dart';
 import 'package:soundboard/src/assets/enums_and_constants/viewstate.dart';
 import 'package:soundboard/src/models/data/audio/audio_data_model.dart';
 import 'package:soundboard/src/models/view/base_view_model.dart';
-import 'package:soundboard/src/services/audio/file_service.dart';
+import 'package:soundboard/src/services/file/file_service.dart';
 
 class AudioListViewModel extends BaseViewModel {
   List<AudioDataModel> _audioList;

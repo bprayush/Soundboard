@@ -3,7 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:soundboard/src/models/view/audio_list_model/audio_list_model.dart';
 import 'package:soundboard/src/models/view/audio_widget_model/audio_player_view_model.dart';
 import 'package:soundboard/src/services/audio/audio_player_service.dart';
-import 'package:soundboard/src/services/audio/file_service.dart';
+import 'package:soundboard/src/services/file/file_service.dart';
 
 GetIt locator = GetIt.instance;
 
